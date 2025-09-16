@@ -1,0 +1,45 @@
+package aula2;
+
+import java.util.Scanner;
+
+public class TestaContaBancaria {
+
+	public static void main(String[] args) {
+		int op = 1;
+		int op2 = 0;
+		
+		Scanner scanner = new Scanner(System.in);
+
+
+		ContaBancaria conta1 = new ContaBancaria(op, null, null, op2, false);
+		do {
+			System.out.println("Digite o que deseja fazer: \n1-Abrir conta\n2-Fechar conta\n3-Depositar\n4-Sacar");
+			op2 = scanner.nextInt();
+			switch (op2) {
+			case 1:
+				conta1.abrirConta();
+				break;
+
+			case 2:
+				conta1.fecharConta();
+				break;
+				
+			case 3:
+				conta1.depositar();
+				break;
+				
+			case 4:
+				conta1.sacar();
+				break;
+			default: 
+				System.out.println("Opção invalida");
+				break;
+			}
+			System.out.println("Deseja continuar no programa? 1-Sim 2-Não");
+			op = scanner.nextInt();
+			
+		} while (op == 1);
+		System.out.println("Saindo do programa...");
+	}
+
+}
